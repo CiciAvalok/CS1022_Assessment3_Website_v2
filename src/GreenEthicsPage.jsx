@@ -136,7 +136,7 @@ export default function GreenEthicsPage() {
         </header>
 
         {/* Banner */}
-        <img src="images/ai_overview.png" alt="AI in environmental work" className="rounded-xl my-10 w-full object-cover" />
+        <img src="images/ai_overview.webp" alt="AI in environmental work" className="rounded-xl my-10 w-full object-cover" />
 
         {/* Scenario Intro */}
         <section className="space-y-4 text-lg leading-relaxed">
@@ -328,3 +328,4 @@ export default function GreenEthicsPage() {
     </div>
   );
 }
+
