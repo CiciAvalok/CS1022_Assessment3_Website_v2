@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -33,11 +33,11 @@
     function GreenEthicsPage() {
       /* ------- 组件内部完整源码从这里粘起 ------- */
 
+  
       /* 你在 GreenEthicsPage.jsx 里的所有代码
          —— 从第一行 const ... 一直到最后一个 } 结尾
          —— 原样粘进来（import/export 行已经处理）*/
       const { useState, useEffect, useRef } = React;
-const { motion, AnimatePresence }   = window["framer-motion"];
 
 /**
  * GreenEthicsPage – A3 interactive ethical‑dilemma demo
@@ -49,7 +49,7 @@ const { motion, AnimatePresence }   = window["framer-motion"];
  *
  *  TailwindCSS + Framer‑motion
  */
-export default function GreenEthicsPage() {
+ function GreenEthicsPage() {
   /* --------------------------- BEGINNING: toggle cards -------------------------- */
   const [showLeft, setShowLeft]   = useState(false);
   const [showRight, setShowRight] = useState(false);
@@ -70,6 +70,7 @@ export default function GreenEthicsPage() {
   /* ----------------------------- sprite 列表 ----------------------------- */
   const roles = [
     { key: "volunteer",  src: "images/volunteer.png",            style: { top: "8%",  left: "10%" } },
+
     { key: "expert",     src: "images/environmental_expert.png", style: { top: "10%", right: "8%" } },
     { key: "competitor", src: "images/competitor.png",          style: { top: "34%", left: "4%" } },
     { key: "boss",       src: "images/boss.png",                style: { top: "55%", right: "4%" } },
@@ -101,7 +102,8 @@ export default function GreenEthicsPage() {
 
       // 让 BUT… 段到达视窗底部时，女孩淡入
       const butRect = butTag.getBoundingClientRect();
-     if (!showGirl && butRect.top <= winH * (2 / 3)) setShowGirl(true);
+     
+      if (!showGirl && butRect.top <= winH * (2 / 3)) setShowGirl(true);
 
       // darkness progress – 当 zone 顶部进入视窗 40% 区域开始渐暗
       const progress = Math.min(1, Math.max(0, (winH * 0.4 - zoneRect.top) / (winH * 0.4)));
@@ -132,6 +134,7 @@ export default function GreenEthicsPage() {
         if (visible < 2) {
           const hiddenKeys = keys.filter(key => !next[key]);
           const k2 = hiddenKeys[Math.floor(Math.random() * hiddenKeys.length)];
+       
           if (k2) next[k2] = true;
         }
         return next;
@@ -163,7 +166,8 @@ export default function GreenEthicsPage() {
 
       {/* ============================= 1 ▍BEGINNING ▍============================= */}
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
+        {/*
+        Header */}
         <header className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold text-green-700 drop-shadow-sm">
             Ethical Dilemma: When the Greenest Solution Hurts People
@@ -194,6 +198,7 @@ export default function GreenEthicsPage() {
 
         {/* Left */}
         <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
+         
           <img src="images/excavator_and_solar.png" alt="Demolish & build" className="rounded-xl mb-4 w-full object-cover" />
           <h2 className="text-2xl font-semibold mb-2 text-green-800 flex items-center gap-1">Follow the AI’s Plan <span className="qmark-left text-green-700">?</span></h2>
           <p className="text-center mb-4">Demolish the old neighbourhood and construct the solar installation exactly where the algorithm recommends.</p>
@@ -225,7 +230,8 @@ export default function GreenEthicsPage() {
         <div style={{ opacity: dark }} className="absolute inset-0 bg-black transition-opacity duration-300 pointer-events-none" />
 
         {/* 坠落女孩 */}
-        {showGirl && (
+        {sh
+          owGirl && (
           <img src="images/fall.png" alt="falling girl" className={(girlFixed ? "fixed" : "absolute") + " left-1/2 -translate-x-1/2 w-40 z-10"} style={{ top: girlFixed ? "35%" : "60%", transition: "top 0.6s" }} />
         )}
 
@@ -256,7 +262,8 @@ export default function GreenEthicsPage() {
       </section>
 
       {/* ============================= 3 ▍SECOND HALF ▍============================ */}
-      {secondGate && (
+      {seco
+        ndGate && (
         <div ref={secondRef}>
           {/* ---------- Pros & Cons ---------- */}
           <section className="max-w-5xl mx-auto mt-20">
@@ -279,6 +286,7 @@ export default function GreenEthicsPage() {
                   <ul className="list-disc ml-6 text-sm md:text-base leading-relaxed">
                     <li><span className="font-bold underline">Respects community and heritage:</span> Avoids uprooting long‑term residents, many of whom lack resources to relocate.</li>
                     <li><span className="font-bold underline">Upholds professional ethics:</span> The EIANZ Code prioritises cultural integrity and public inclusion in environmental practice (EIANZ, 2021).</li>
+
                     <li><span className="font-bold underline">Avoids long‑term backlash:</span> Projects that ignore social impact may face public resistance, legal delays, or reputational harm.</li>
                   </ul>
                 </div>
@@ -310,7 +318,8 @@ export default function GreenEthicsPage() {
           {/* ---------- Possible Solutions ---------- */}
           <section className="max-w-6xl mx-auto mt-20">
             <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-8">Possible Solutions</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div clas
+              sName="grid md:grid-cols-2 gap-8">
               {/* Option 1 */}
               <div className="bg-white rounded-2xl shadow-lg p-6 space-y-4">
                 <h3 className="text-xl font-semibold text-green-700">✅ Option 1: Proceed with relocation, but compensate fairly</h3>
@@ -341,7 +350,8 @@ export default function GreenEthicsPage() {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">References</h2>
             <ul className="text-sm md:text-base leading-relaxed space-y-2 list-none pl-0" style={{ textIndent: "-1.5em", paddingLeft: "1.5em" }}>
               <li><span className="italic">Banzhaf, S., Ma, L., &amp; Timmins, C.</span> (2019). Environmental Justice: The Economics of Race, Place, and Pollution. <span className="italic">The Journal of Economic Perspectives, 33</span>(1), 185–208. https://doi.org/10.1257/jep.33.1.185</li>
-              <li><span className="italic">Boyle, K. J., Boatwright, J., Brahma, S., &amp; Xu, W.</span> (2019). NIMBY, not, in siting community wind farms. <span className="italic">Resource and Energy Economics, 57</span>, 85–100. https://doi.org/10.1016/j.reseneeco.2019.04.004</li>
+              <
+                li><span className="italic">Boyle, K. J., Boatwright, J., Brahma, S., &amp; Xu, W.</span> (2019). NIMBY, not, in siting community wind farms. <span className="italic">Resource and Energy Economics, 57</span>, 85–100. https://doi.org/10.1016/j.reseneeco.2019.04.004</li>
               <li>Crocker, D., &amp; Agadoni, A. (2025, June 6). 4 ways environmental consultants are using AI—Ready or not, the future is here. <span className="italic">LightBox Insights.</span> https://www.lightboxre.com/insight/4-ways-environmental-consultants-are-using-ai-ready-or-not-the-future-is-here/</li>
               <li>EIANZ. (2021, December 1). <span className="italic">EIANZ Code of Ethics &amp; Professional Conduct.</span> https://www.eianz.org/document/item/8078</li>
               <li><span className="italic">Johnson, G. M.</span> (2021). Algorithmic bias: on the implicit biases of social technology. <span className="italic">Synthese, 198</span>(10), 9941–9961. https://doi.org/10.1007/s11229-020-02696-y</li>
