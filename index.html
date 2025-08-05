@@ -1,18 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Green Ethics Page</title>
+
+    <!-- UMD 版 React / ReactDOM（17 或 18 均可）-->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel stand-alone：在浏览器里即时把 JSX 编译成 JS -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
+
   <body>
     <div id="root"></div>
-    <script type="module">
-      import GreenEthicsPage from './src/GreenEthicsPage.jsx';
-      import React from 'https://cdn.skypack.dev/react';
-      import ReactDOM from 'https://cdn.skypack.dev/react-dom';
 
-      ReactDOM.render(React.createElement(GreenEthicsPage), document.getElementById('root'));
+    <!-- 1️⃣ 加载你的组件代码文件（仍放在 src/ 文件夹）-->
+    <script
+      type="text/babel"
+      data-presets="react"
+      src="src/GreenEthicsPage.jsx">
+    </script>
+
+    <!-- 2️⃣ 挂载到页面 -->
+    <script type="text/babel">
+      ReactDOM.createRoot(document.getElementById('root'))
+              .render(<GreenEthicsPage />);
     </script>
   </body>
 </html>
