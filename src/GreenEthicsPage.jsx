@@ -11,7 +11,7 @@ const { motion, AnimatePresence }   = window["framer-motion"];
  *
  *  TailwindCSS + Framer‑motion
  */
-export default function GreenEthicsPage() {
+function GreenEthicsPage() {
   /* --------------------------- BEGINNING: toggle cards -------------------------- */
   const [showLeft, setShowLeft]   = useState(false);
   const [showRight, setShowRight] = useState(false);
@@ -328,5 +328,6 @@ export default function GreenEthicsPage() {
     </div>
   );
 }
+
 
 
