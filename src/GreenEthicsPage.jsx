@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+const { useState, useEffect, useRef } = React;
+const { motion, AnimatePresence }   = window["framer-motion"];
 
 /**
  * GreenEthicsPage – A3 interactive ethical‑dilemma demo
@@ -328,4 +328,5 @@ export default function GreenEthicsPage() {
     </div>
   );
 }
+
 
