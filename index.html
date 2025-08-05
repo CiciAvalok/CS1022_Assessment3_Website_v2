@@ -5,14 +5,17 @@
   <title>Greenest Solution Dilemma</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- React & ReactDOM UMD -->
+  <!-- React & ReactDOM UMD 版 -->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-  <!-- Babel stand-alone：在浏览器里把 JSX → JS -->
+  <!-- Babel stand-alone：让浏览器能解析 JSX -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Framer-motion UMD -->
   <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
-  <!-- 你自己写的全局样式，可选 -->
+
+  <!-- 可选：你自己的全局样式文件 -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -20,12 +23,24 @@
   <!-- React 挂载点 -->
   <div id="root"></div>
 
-  <!-- 1️⃣ 载入组件源码（仍存在 src/ 里）-->
-  <script type="text/babel" data-presets="react"
-          src="src/GreenEthicsPage.jsx"></script>
+  <!-- 下面这段就是全部 React 组件源码，type 必须是 text/babel -->
+  <script type="text/babel" data-presets="react">
+    /* ① 先把 import 改成常量引用 */
+    const { useState, useEffect, useRef } = React;
+    const { motion, AnimatePresence }     = window["framer-motion"];
 
-  <!-- 2️⃣ 挂载到页面 -->
-  <script type="text/babel">
+    /* ② 把 “export default” 改成普通函数定义 */
+    function GreenEthicsPage() {
+      /* ------- 组件内部完整源码从这里粘起 ------- */
+
+      /* 你在 GreenEthicsPage.jsx 里的所有代码
+         —— 从第一行 const ... 一直到最后一个 } 结尾
+         —— 原样粘进来（import/export 行已经处理）*/
+      
+      
+    } /* ------- 到这里结束 ------- */
+
+    /* ③ 渲染到页面 */
     ReactDOM.createRoot(document.getElementById('root'))
             .render(<GreenEthicsPage />);
   </script>
