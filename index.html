@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Green Ethics Page</title>
+<head>
+  <meta charset="UTF-8" />
+  <title>Greenest Solution Dilemma</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <!-- UMD 版 React / ReactDOM（17 或 18 均可）-->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- React & ReactDOM UMD -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-    <!-- Babel stand-alone：在浏览器里即时把 JSX 编译成 JS -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
+  <!-- Babel stand-alone：在浏览器里把 JSX → JS -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <body>
-    <div id="root"></div>
+  <!-- 你自己写的全局样式，可选 -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- 1️⃣ 加载你的组件代码文件（仍放在 src/ 文件夹）-->
-    <script
-      type="text/babel"
-      data-presets="react"
-      src="src/GreenEthicsPage.jsx">
-    </script>
+<body>
+  <!-- React 挂载点 -->
+  <div id="root"></div>
 
-    <!-- 2️⃣ 挂载到页面 -->
-    <script type="text/babel">
-      ReactDOM.createRoot(document.getElementById('root'))
-              .render(<GreenEthicsPage />);
-    </script>
-  </body>
+  <!-- 1️⃣ 载入组件源码（仍存在 src/ 里）-->
+  <script type="text/babel" data-presets="react"
+          src="src/GreenEthicsPage.jsx"></script>
+
+  <!-- 2️⃣ 挂载到页面 -->
+  <script type="text/babel">
+    ReactDOM.createRoot(document.getElementById('root'))
+            .render(<GreenEthicsPage />);
+  </script>
+</body>
 </html>
