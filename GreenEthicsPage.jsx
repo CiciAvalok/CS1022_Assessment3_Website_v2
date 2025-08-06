@@ -1,3 +1,6 @@
+// 让浏览器全局里的 React / Framer Motion API 成为局部变量
+const { useState, useEffect, useRef } = React;
+const { motion, AnimatePresence } = window['framer-motion'];
 
 /**
  * GreenEthicsPage – A3 interactive ethical‑dilemma demo
